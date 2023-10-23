@@ -104,12 +104,14 @@ class Cityscapes(BaseDataset):
 
             return image.copy(), np.array(size), name
 
-        label = cv2.imread(os.path.join(self.root,'cityscapes',item["label"]),
+        label = cv2.imread(os.path.join(self.root, 'cityscapes' ,item["label"]),
                            cv2.IMREAD_GRAYSCALE)
         label = self.convert_label(label)
 
         image, label, edge = self.gen_sample(image, label, 
-                                self.multi_scale, self.flip, edge_size=self.bd_dilate_size)
+                                             self.multi_scale, 
+                                             self.flip, 
+                                             edge_size=self.bd_dilate_size)
 
         return image.copy(), label.copy(), edge.copy(), np.array(size), name
 
