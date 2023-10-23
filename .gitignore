@@ -84,3 +84,8 @@ dmypy.json
 .pyre/
 .pytype/
 cython_debug/
+
+*.jpg
+*.png
+log/
+pretrained_models/
